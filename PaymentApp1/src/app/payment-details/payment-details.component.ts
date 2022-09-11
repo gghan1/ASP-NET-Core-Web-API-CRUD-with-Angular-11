@@ -11,7 +11,7 @@ import { PaymentDetailService } from '../shared/payment-detail.service';
 export class PaymentDetailsComponent implements OnInit {
 
   constructor(
-    public service: PaymentDetailService,
+    public service: PaymentDetailService
     //private toastr: ToastrService
   ) { }
 
