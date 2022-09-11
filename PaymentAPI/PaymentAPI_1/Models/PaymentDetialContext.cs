@@ -2,9 +2,9 @@
 
 namespace PaymentAPI.Models
 {
-    public class PaymentDetialContext : DbContext
+    public class PaymentDetailContext : DbContext
     {
-        public PaymentDetialContext(DbContextOptions<PaymentDetialContext> options) : base(options)
+        public PaymentDetailContext(DbContextOptions<PaymentDetailContext> options) : base(options)
         {
 
         }
