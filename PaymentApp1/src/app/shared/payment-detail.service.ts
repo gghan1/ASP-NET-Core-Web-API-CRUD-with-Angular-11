@@ -8,10 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class PaymentDetailService {
 
   constructor(
-    /*private http: HttpClient*/ // Error here
+    private http: HttpClient 
   ) { }
 
 
   readonly baseURL = 'https://localhost:44343/api/PaymentDetails'
   formData: PaymentDetail = new PaymentDetail();
+
+  pstPaymentDetail() {
+    return this.http.post(this.baseURL, this.formData);
+  }
 }
