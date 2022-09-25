@@ -1,5 +1,5 @@
 <p>payment-detail-form works!</p>
-<form novalidate #form="ngForm" >
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
   <input type="hidden" name="paymentDetailsId"
          [value]="service.formData.paymentDetailId" />
   <div class="form-group">

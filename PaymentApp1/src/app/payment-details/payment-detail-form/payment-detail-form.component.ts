@@ -19,4 +19,13 @@ export class PaymentDetailFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(form: NgForm) {
+    this.service.pstPaymentDetail().subscribe(
+      res => {
+
+      },
+      err => { console.log(err) }
+    )
+  }
+
 }
