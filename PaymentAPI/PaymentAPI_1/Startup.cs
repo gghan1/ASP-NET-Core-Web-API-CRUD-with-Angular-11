@@ -27,7 +27,8 @@ namespace PaymentAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PaymentAPI", Version = "v1" });
             });
-            services.AddDbContext<PaymentDetailContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddDbContext<PaymentDetailContext>(
+                opt => opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddCors();
 
         }
@@ -35,6 +36,11 @@ namespace PaymentAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
